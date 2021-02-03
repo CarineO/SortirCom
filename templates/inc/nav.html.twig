@@ -1,0 +1,18 @@
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+            <img  src="{{ asset("img/sortircom.png") }}">
+        </a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+            {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+                <li class="tab"><a href="{{ path("home") }}" title="Sortir.com | Accueil">Accueil</a></li>
+                <li class="tab"><a href="{{ path("profil") }}" title="Sortir.com | Mon profil">Mon profil</a></li>
+                <li class="tab"><a href="{{ path("logout") }}" title="Sortir.com | Se déconnecter">Se déconnecter</a></li>
+            {% else %}
+
+            {% endif %}
+
+        </ul>
+    </div>
+</nav>

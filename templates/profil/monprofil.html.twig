@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+
+    <h2 align="center"> Mon profil</h2>
+
+    {{  form_start(formProfil,  {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(formProfil) }}
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Enregistrer
+    </button>
+    <button class="btn btn-lg btn-primary" type="reset">
+        Annuler
+    </button>
+    {{ form_end(formProfil) }}
+{% endblock %}
+
+{% block title %}Sortir.Com | Mon profil {% endblock %}

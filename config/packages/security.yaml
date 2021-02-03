@@ -1,0 +1,37 @@
+security:
+    providers:
+        our_db_provider:
+            entity:
+                class: App\Entity\Participant
+
+
+    firewalls:
+        main:
+            remember_me:
+                secret: '%kernel.secret%'
+                lifetime: 604800 # 1 week in seconds
+                path: /
+                # by default, the feature is enabled by checking a
+                # checkbox in the login form (see below), uncomment the
+                # following line to always enable it.
+                #always_remember_me: true
+            guard:
+                authenticators:
+                    - App\Security\Authenticator
+            pattern: ^/
+            provider: our_db_provider
+            anonymous:
+            form_login:
+                default_target_path: home
+                login_path: login
+                check_path: login
+
+            logout:
+                path: logout
+                target: login
+
+    encoders:
+        App\Entity\Participant:
+            algorithm: bcrypt
+
+
