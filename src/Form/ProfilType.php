@@ -20,7 +20,7 @@ class ProfilType extends AbstractType
 			->add('nom')
 			->add('telephone')
 			->add('email', EmailType::class)
-			->add('password', RepeatedType::class, [
+			->add('plainPassword', RepeatedType::class, [
 				'type'           => PasswordType::class,
 				'required'       => true,
 				'first_options'  => array('label' => 'Password'),

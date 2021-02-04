@@ -29,11 +29,11 @@ class ProfilController extends AbstractController
 				$hashed = $encoder->encodePassword($participant, $participant->getPassword());
 				$participant->setPassword($hashed);
 				$participant->getPlainPassword();
-			
+			}
 			$em->persist($participant);
 			$em->flush();
 			return $this->redirectToRoute('home');
-			}
+			
 		}
 		
 		return $this->render('profil/monprofil.html.twig', [

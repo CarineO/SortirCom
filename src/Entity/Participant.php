@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ParticipantRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -61,6 +63,47 @@ class Participant implements UserInterface
      */
     private $telephone;
 
+    private $plainPassword;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Sortie::class, mappedBy="participant")
+     */
+    private $sorties;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Campus::class, inversedBy="participants")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $campus;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Sortie::class, mappedBy="participants")
+     */
+    private $psorties;
+
+    public function __construct()
+    {
+        $this->sorties = new ArrayCollection();
+        $this->psorties = new ArrayCollection();
+    }
+    
+	
+	/**
+	 * @return mixed
+	 */
+	public function getPlainPassword()
+                                                	{
+                                                		return $this->plainPassword;
+                                                	}
+	
+	/**
+	 * @param mixed $plainPassword
+	 */
+	public function setPlainPassword($plainPassword): void
+                                                	{
+                                                		$this->plainPassword = $plainPassword;
+                                                	}
+    
     
     
     
@@ -187,6 +230,75 @@ class Participant implements UserInterface
     public function setTelephone(string $telephone): self
     {
         $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Sortie[]
+     */
+    public function getSorties(): Collection
+    {
+        return $this->sorties;
+    }
+
+    public function addSorty(Sortie $sorty): self
+    {
+        if (!$this->sorties->contains($sorty)) {
+            $this->sorties[] = $sorty;
+            $sorty->setParticipant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSorty(Sortie $sorty): self
+    {
+        if ($this->sorties->removeElement($sorty)) {
+            // set the owning side to null (unless already changed)
+            if ($sorty->getParticipant() === $this) {
+                $sorty->setParticipant(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCampus(): ?Campus
+    {
+        return $this->campus;
+    }
+
+    public function setCampus(?Campus $campus): self
+    {
+        $this->campus = $campus;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Sortie[]
+     */
+    public function getPsorties(): Collection
+    {
+        return $this->psorties;
+    }
+
+    public function addPsorty(Sortie $psorty): self
+    {
+        if (!$this->psorties->contains($psorty)) {
+            $this->psorties[] = $psorty;
+            $psorty->addParticipant($this);
+        }
+
+        return $this;
+    }
+
+    public function removePsorty(Sortie $psorty): self
+    {
+        if ($this->psorties->removeElement($psorty)) {
+            $psorty->removeParticipant($this);
+        }
 
         return $this;
     }
