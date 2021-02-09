@@ -4,7 +4,6 @@ security:
             entity:
                 class: App\Entity\Participant
 
-
     firewalls:
         main:
             remember_me:
@@ -25,7 +24,6 @@ security:
                 default_target_path: home
                 login_path: login
                 check_path: login
-
             logout:
                 path: logout
                 target: login

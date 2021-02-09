@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/home2", name="home2")
      */
     public function home()
     {

@@ -26,9 +26,9 @@ class ProfilController extends AbstractController
 		if ($formProfil->isSubmitted() && $formProfil->isValid()) {
 			if (!empty($participant->getPlainPassword())) {
 				
-				$hashed = $encoder->encodePassword($participant, $participant->getPassword());
-				$participant->setPassword($hashed);
-				$participant->getPlainPassword();
+				$password = $encoder->encodePassword($participant, $participant->getPlainPassword());
+				$participant->setPassword($password);
+				
 			}
 			$em->persist($participant);
 			$em->flush();
@@ -44,3 +44,6 @@ class ProfilController extends AbstractController
 	}
 	
 }
+
+
+

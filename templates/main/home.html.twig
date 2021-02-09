@@ -1,8 +1,113 @@
 {% extends 'layout.html.twig' %}
 
 {% block main %}
-   <h1> HELLO {{ app.user.pseudo }}!</h1>
+    <form method="GET">
+        <div class="row1" id="row1">
+            <div class="col s9 offset-s9">
 
+                <p>Date du jour :{{ "now" | date('d/m/Y') }}</p>
+                <p> Participant : {{ app.user.pseudo }}!</p>
+
+            </div>
+        </div>
+
+        <div class="row" id="row2">
+            <div class="col s6">
+                <p>Filtrer les sorties</p>
+                <label>Campus</label>
+                <select class="browser-default" name="campus">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">SAINT HERBLAIN</option>
+                    <option value="2">CHARTRES DE BRETAGNE</option>
+                    <option value="3">LA ROCHE SUR YON</option>
+                </select>
+
+                <label for="site-search">Le nom de la sortie contient :</label>
+                <input type="search" id="site-search" name="search"
+                       aria-label="Search through site content">
+                <button type="submit">Search</button>
+
+                <br/>
+                <div class="col s6">
+                    <p>
+                        Entre <input type="date">
+                    </p>
+                </div>
+                <div class=" col s6">
+                    <p>
+                        et <input type="date">
+
+                    </p></div>
+            </div>
+
+            <div class="col s4">
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Sorties dont je suis l'organisateur/trice</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Sorties auxquelles je suis inscrit/e</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Sorties auxquelles je ne suis pas inscrit/e</span>
+                    </label>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" class="filled-in"/>
+                        <span>Sorties passées</span>
+                    </label>
+                </p>
+
+            </div>
+
+            <div class="col s2">
+
+                <button class="btn waves-effect waves-light" type="submit" name="action">Rechercher
+                    <i class="material-icons right"></i>
+                </button>
+
+            </div>
+        </div>
+
+    </form>
+
+    <div class="row" id="row3">
+        <div class="col s12">
+            <table>
+                <th>Nom de la sortie</th>
+                <th>Date de la sortie</th>
+                <th>Clôture</th>
+                <th>inscrits/places</th>
+                <th>Etat</th>
+                <th>Inscrit</th>
+                <th>Organisateur</th>
+                <th>Actions</th>
+                <tr></tr>
+
+                <!-- TABLEAU FINDALL SORTIES-->
+                {% for sortie in sorties %}
+                    <tr>
+                        <td>{{ sortie.nom }}</td>
+                        <td>{{ sortie.dateHeureDebut | date('d/m/Y H:i') }}</td>
+                        <td>{{ sortie.dateLimiteInscription | date('d/m/Y') }}</td>
+                        <td>/{{ sortie.nbInscriptionMax }}</td>
+                        <td>{{ sortie.etat }}</td>
+                        <td></td>
+                        <td>{{ sortie.organisateur.pseudo }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
 {% endblock %}
-
 {% block title %}Sortir.Com | Home {% endblock %}

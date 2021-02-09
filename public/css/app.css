@@ -1,3 +1,10 @@
+.row1
+{
+    text-align: right;
+   margin-right: 10px;
+    margin-top: 10px;
+}
+
 nav
 {
     background-color: #26a69a;
@@ -23,7 +30,7 @@ img
 }
 
 footer {
-    position: absolute;
+    position: relative;
     bottom: 0;
 }
 
