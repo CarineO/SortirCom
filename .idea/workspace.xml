@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b87b8555-d5c8-4786-bfb4-29afe7a161e4" name="Default Changelist" comment="MAJ2">
-      <change afterPath="$PROJECT_DIR$/public/js/formJs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/jquery-3.5.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/main/creationSortie.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Participant.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Participant.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/inc/nav.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/inc/nav.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/layout.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/main/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/main/home.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-    </list>
+    <list default="true" id="b87b8555-d5c8-4786-bfb4-29afe7a161e4" name="Default Changelist" comment="MAJ3" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -165,6 +154,7 @@
       <workItem from="1612269354205" duration="6072000" />
       <workItem from="1612277285514" duration="80518000" />
       <workItem from="1612861010034" duration="73175000" />
+      <workItem from="1613114592887" duration="41000" />
     </task>
     <task id="LOCAL-00001" summary="MAJ">
       <created>1612425272411</created>
@@ -180,7 +170,14 @@
       <option name="project" value="LOCAL" />
       <updated>1612891964079</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MAJ3">
+      <created>1613114609407</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1613114609407</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -196,11 +193,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="MAJ" />
     <MESSAGE value="MAJ2" />
-    <option name="LAST_COMMIT_MESSAGE" value="MAJ2" />
+    <MESSAGE value="MAJ3" />
+    <option name="LAST_COMMIT_MESSAGE" value="MAJ3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
