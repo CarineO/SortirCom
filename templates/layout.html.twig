@@ -6,16 +6,15 @@
           content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}Sortir.com{% endblock %}</title>
-
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{{ asset("css/app.css") }}">
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="icon" href="{{ asset('img/favsortircom.png') }}">
 
 
 </head>
 <body>
+<script src="{{ asset('js/jquery-3.5.1.min.js') }}"></script>
+
 <header>
 
     {% include('inc/nav.html.twig') %}
@@ -34,6 +33,7 @@
     ©Laurene & Carine
 </footer>
 </body>
+
 </html>
 
 

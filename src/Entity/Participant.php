@@ -68,7 +68,12 @@ class Participant implements UserInterface
 	 */
 	private $campus;
 	
-
+	/**
+	 * @ORM\OneToMany(targetEntity="App\Entity\Sortie", mappedBy="organisateur")
+	 */
+	private $organisateur;
+	
+	
 	
 	/**
 	 * @ORM\ManyToMany (targetEntity="App\Entity\Sortie")
@@ -263,7 +268,10 @@ class Participant implements UserInterface
 		$this->campus = $campus;
 	}
 	
-	
+	public function __toString()
+	{
+		return (string) $this->getNom();
+	}
 	
 	
 }

@@ -25,17 +25,17 @@
                 <label for="site-search">Le nom de la sortie contient :</label>
                 <input type="search" id="site-search" name="search"
                        aria-label="Search through site content">
-                <button type="submit">Search</button>
+
 
                 <br/>
                 <div class="col s6">
                     <p>
-                        Entre <input type="date">
+                        Entre <input type="date" name="date1">
                     </p>
                 </div>
                 <div class=" col s6">
                     <p>
-                        et <input type="date">
+                        et <input type="date" name="date2">
 
                     </p></div>
             </div>
@@ -43,25 +43,25 @@
             <div class="col s4">
                 <p>
                     <label>
-                        <input type="checkbox" class="filled-in"/>
+                        <input type="checkbox" class="filled-in" name="organisateur"/>
                         <span>Sorties dont je suis l'organisateur/trice</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" class="filled-in"/>
+                        <input type="checkbox" class="filled-in" name="inscrit"/>
                         <span>Sorties auxquelles je suis inscrit/e</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" class="filled-in"/>
+                        <input type="checkbox" class="filled-in" name="noninscrit"/>
                         <span>Sorties auxquelles je ne suis pas inscrit/e</span>
                     </label>
                 </p>
                 <p>
                     <label>
-                        <input type="checkbox" class="filled-in"/>
+                        <input type="checkbox" class="filled-in" name="datepassee"/>
                         <span>Sorties passées</span>
                     </label>
                 </p>
@@ -109,5 +109,9 @@
             </table>
         </div>
     </div>
+    <button class="btn waves-effect waves-light" ><a href="{{ path('creation_sortie') }}" style="color: white">Créer une sortie</a>
+        <i class="material-icons right"></i>
+    </button>
+
 {% endblock %}
 {% block title %}Sortir.Com | Home {% endblock %}
